@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Нахождение дискриминанта</title>
+    <script>
+        function calcD() {
+            const a = parseFloat(document.getElementById('a').value);
+            const b = parseFloat(document.getElementById('b').value);
+            const c = parseFloat(document.getElementById('c').value);
+            
+            if (isNaN(a) || isNaN(b) || isNaN(c)) {
+                document.getElementById('result').textContent = "Введите все три коэффициента (a, b, c)";
+                return;
+            }
+
+            const discriminant = b * b - 4 * a * c;
+            document.getElementById('result').textContent = "Дискриминант: " + discriminant;
+        }
+    </script>
+</head>
+<body>
+    <h2>Расчет дискриминанта квадратного уравнения</h2>
+    
+    <div>
+        <label>a: <input type="number" id="a"></label>
+    </div>
+    <div>
+        <label>b: <input type="number" id="b"></label>
+    </div>
+    <div>
+        <label>c: <input type="number" id="c"></label>
+    </div>
+    
+    <button onclick="calcD()">Вычислить дискриминант</button>
+    
+    <div id="result"></div>
+</body>
+</html>
